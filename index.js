@@ -7,28 +7,30 @@ let sec = moment().diff(moment().hour(00).minute(0).second(0), 'seconds');
 let dayls = '';
 let leapYear = '';
 
-console.log(chalk`It is {blue ${now}}.`);
+console.log(chalk `It is {blue ${now}}.`);
 
-console.log(chalk`It is the {magenta ${doy}} day of the year.`);
+console.log(chalk `It is the {magenta ${doy}} day of the year.`);
 
-console.log(chalk`It is {cyan ${sec}} seconds into the day.`);
+console.log(chalk `It is {cyan ${sec}} seconds into the day.`);
 
 function dls() {
   if (moment().isDST() === false) {
     dayls = 'is not';
+  } else {
+    dayls = 'is';
   }
-  dayls = 'is';
 }
 dls();
 
-console.log(chalk`It {green ${dayls}} during Daylight Savings Time.`);
+console.log(chalk `It {green ${dayls}} during Daylight Savings Time.`);
 
 function ly() {
   if (moment().isLeapYear() === false) {
     leapYear = 'is not';
+  } else {
+    leapYear = 'is';
   }
-  leapYear = 'is';
 }
 ly();
 
-console.log(chalk`It {red ${leapYear}} a leap year.`);
+console.log(chalk `It {red ${leapYear}} a leap year.`);
